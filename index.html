@@ -1,0 +1,193 @@
+<!--A todo list app to keep track of user's tasks everyday-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner App</title>
+  <link rel="icon" type="image/x-icon" href="/assets/logo-img.png" />
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
+  <div id="login-page">
+    <div class="app-heading">
+      <div class="logo-div"><img class="logo" src="/assets/todoist.png" /></div>
+      <div id="sign-up-button" class="sign-up">
+        <img class="sign-up-image" src="/assets/sign_up.png" />
+      </div>
+    </div>
+    <div class="header"></div>
+    <div class="login-body">
+      <div class="log-in-box">
+        <div class="login-text">
+          <bold>Login</bold>
+        </div>
+        <div class="user-name-box">
+
+          <div>User Name</div>
+          <div>
+            <input id="login-user" name="name" type="text" placeholder="User Name" autocomplete="off" />
+          </div>
+        </div>
+        <div class="password-box">
+          <div>Password</div>
+          <div>
+            <input name="password" id="login-password" type="password" placeholder="password" autocomplete="off" />
+          </div>
+        </div>
+        <button type="submit" id="login-sign-in" class="sign-in">sign in</button>
+
+      </div>
+      <div class="minion-div">
+        <img class="minion-image" src="/assets/minion.jpg" />
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+  <div id="register-page">
+    <div class="app-heading">
+      <div class="logo-div"><img class="logo" src="/assets/todoist.png" /></div>
+    </div>
+    <div class="header"></div>
+    <div class="login-body">
+      <div class="log-in-box">
+        <div class="login-text">
+          <bold>Sign up</bold>
+        </div>
+        <div class="user-name-box">
+          <div>User Name</div>
+          <div>
+            <input id="reg-user" type="text" name="name" placeholder="User Name" autocomplete="off" />
+          </div>
+        </div>
+        <div class="password-box">
+          <div>Password</div>
+          <div>
+            <input id="reg-password" name="password" type="password" placeholder="password" autocomplete="off" />
+          </div>
+        </div>
+        <button type="submit" id="reg-sign-up" class="sign-up-reg">sign up</button>
+
+        <div class="login-reg">Already have an account? <span id="login-link" class="login-link">login</span></div>
+      </div>
+
+    </div>
+    <div class="footer"></div>
+  </div>
+  <div id="user-dashboard">
+    <div class="day-planner">
+      <div class="planner-heading">
+        <div class="heading1"><span id="dashboard-user">Ash</span>'s Day Planner</div>
+        <div class="heading2">
+          Each day, I will accomplish one thing on my to do list!
+        </div>
+      </div>
+      <a class="text" id="logout_button">
+        <div class="logout">
+          <div class="logout-text">Logout</div>
+
+        </div>
+      </a>
+    </div>
+    <div class="modal">
+      <div class="modal-content" id="add-page">
+        <div class="task-form">
+          <div class="exit-icon">
+            <p class="close-button" id="exit-button">Exit</p>
+          </div>
+          <div class="add-heading">Add Task</div>
+          <div>Task Title:</div>
+          <div>
+            <input id="title" name="title" type="text" placeholder="Task Title" autocomplete="off" />
+          </div>
+          <div>Start Date:</div>
+          <input type="date" id="start_date" name="start_date" />
+          <div>Planned End Date:</div>
+          <input type="date" id="end_date" name="end_date" />
+          <button id="task-submit" class="close-button1">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div id="test" class="popup" style="display:none;">
+
+      <div class="edit-flex">
+        <div class="edit-exit-icon">
+          <p class="edit-close-button" id="exit-edit">Exit</p>
+        </div>
+        <div class="add-heading">Edit Task</div>
+        <div>Task Title:</div>
+        <div>
+          <input id="edit-title-text" name="title" type="text" placeholder="Task Title" autocomplete="off" />
+        </div>
+        <div>Start Date:</div>
+        <input type="date" id="edit-start_date" name="start_date" />
+        <div>Planned End Date:</div>
+        <input type="date" id="edit-end_date" name="end_date" />
+        <button id="edit-submit-button">Submit</button>
+      </div>
+    </div>
+    <div id="dashboard" class="dashboard">
+      <div class="date">
+
+        <div class="progress">
+          <div class="progress-percentage">
+            <div class="percent-text">Progress</div>
+            <div class="circle">
+              <p id="percentage-degree">40 %</p>
+            </div>
+          </div>
+        </div>
+        <div class="move"></div>
+        <div id="add-task" class="add-task">
+          <p>+ Add Task</p>
+        </div>
+        <div class="current-date">
+          <div class="date-heading">
+            <p>Today's Date</p>
+          </div>
+          <div class="date-data">
+            <div id="day">Sun</div>
+            <div id="date-month-year">21 jan 2022</div>
+          </div>
+        </div>
+        <div class="sort" id="sort">
+          <div class="sort-text">
+            <p>Sort Tasks</p>
+          </div>
+          <div id="arrow-div">
+            <img id="direction-arrow" src="assets/arrow_down.png" />
+          </div>
+        </div>
+        <div class="filter">
+          <div><input id="filter-task" name="filter-task" type="text" class="filter-text" placeholder="Filter Tasks..."
+              autocomplete="off" /></div>
+
+          <div class="filter-image">
+            <button class="button2"><img id="filter-task-button" class="filter-task" src="assets/filter.png" /></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-manager">
+        <div class="not-started">
+          <div class="not-started-heading">Not Started</div>
+          <div id="list-not-started"></div>
+        </div>
+        <div class="in-progress">
+          <div class="in-progress-heading">In Progress</div>
+          <div id="list-in-progress"></div>
+        </div>
+        <div class="completed">
+          <div class="completed-heading">Completed</div>
+          <div id="list-completed"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="script/index.js"></script>
+</body>
+
+</html>
